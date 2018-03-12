@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.k.kwidget.CanvasActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="绘制位图"
+            android:id="@+id/drawBitmap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/drawPoint"
+            android:layout_toEndOf="@id/drawBitmap"
+            android:text="绘制点"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/drawLine"
+            android:layout_toEndOf="@id/drawPoint"
+            android:text="绘制线"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/drawSquare"
+            android:layout_toEndOf="@id/drawLine"
+            android:text="绘制矩形"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/drawCircle"
+            android:layout_below="@id/drawBitmap"
+            android:text="绘制圆"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_toEndOf="@id/drawCircle"
+            android:id="@+id/drawRoute"
+            android:layout_below="@id/drawBitmap"
+            android:text="绘制路径"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_toEndOf="@id/drawRoute"
+            android:id="@+id/drawText"
+            android:layout_below="@id/drawBitmap"
+            android:text="绘制文字"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
