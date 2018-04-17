@@ -9,49 +9,56 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <Button
-            android:text="绘制位图"
             android:id="@+id/drawBitmap"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="绘制位图" />
+
         <Button
             android:id="@+id/drawPoint"
-            android:layout_toEndOf="@id/drawBitmap"
-            android:text="绘制点"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/drawBitmap"
+            android:text="绘制点" />
+
         <Button
             android:id="@+id/drawLine"
-            android:layout_toEndOf="@id/drawPoint"
-            android:text="绘制线"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/drawPoint"
+            android:text="绘制线" />
+
         <Button
             android:id="@+id/drawSquare"
-            android:layout_toEndOf="@id/drawLine"
-            android:text="绘制矩形"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/drawLine"
+            android:text="绘制矩形" />
+
         <Button
             android:id="@+id/drawCircle"
-            android:layout_below="@id/drawBitmap"
-            android:text="绘制圆"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/drawBitmap"
+            android:text="绘制圆" />
+
         <Button
-            android:layout_toEndOf="@id/drawCircle"
             android:id="@+id/drawRoute"
-            android:layout_below="@id/drawBitmap"
-            android:text="绘制路径"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/drawBitmap"
+            android:layout_toEndOf="@id/drawCircle"
+            android:text="绘制路径" />
+
         <Button
-            android:layout_toEndOf="@id/drawRoute"
             android:id="@+id/drawText"
-            android:layout_below="@id/drawBitmap"
-            android:text="绘制文字"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/drawBitmap"
+            android:layout_toEndOf="@id/drawRoute"
+            android:text="绘制文字" />
 
     </RelativeLayout>
 
