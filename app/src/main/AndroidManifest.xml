@@ -9,14 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CanvasActivity">
+        <activity android:name=".custom.CustomViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".canvas.PaintActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".canvas.DrawRectActivity" />
+        <activity android:name=".canvas.BallMoveActivity" />
+        <activity android:name=".canvas.CoordinateActivity" />
+        <activity android:name=".canvas.ClipActivity" />
+        <activity android:name=".canvas.ClipAnimActivity" />
+        <activity android:name=".canvas.WatchActivity" />
+        <activity android:name=".canvas.DrawLine1Activity" />
+        <activity android:name=".canvas.DrawLine2Activity" />
+        <activity android:name=".canvas.CanvasActivity" />
+        <activity android:name=".shadow.ShadowActivity" />
+        <activity android:name=".shadow.GradientActivity" />
+        <activity android:name=".shadow.LayerActivity" />
+        <activity android:name=".shadow.DemoActivity"/>
     </application>
 
 </manifest>

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.k.kwidget.CanvasActivity">
+    tools:context="com.k.kwidget.canvas.CanvasActivity">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -51,21 +51,29 @@
             android:layout_below="@id/drawBitmap"
             android:layout_toEndOf="@id/drawCircle"
             android:text="绘制路径" />
+        <Button
+            android:id="@+id/drawBezier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/drawBitmap"
+            android:layout_toEndOf="@id/drawRoute"
+            android:text="贝塞尔曲线" />
 
         <Button
             android:id="@+id/drawText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/drawBitmap"
-            android:layout_toEndOf="@id/drawRoute"
+            android:layout_toEndOf="@id/drawBezier"
             android:text="绘制文字" />
 
     </RelativeLayout>
 
 
     <ImageView
+        tools:src="@mipmap/ic_launcher"
         android:id="@+id/iv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

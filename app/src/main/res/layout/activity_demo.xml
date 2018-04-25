@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.k.kwidget.shadow.DemoActivity">
+
+
+
+    <Button
+        android:id="@+id/btn_circle_photo"
+        android:text="圆形头像"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_launcher_photo"
+        android:text="机器人头像"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_gua"
+        android:text="刮刮乐"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.k.kwidget.shadow.widget.CirclePhotoView
+        android:id="@+id/circle_photo_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.k.kwidget.shadow.widget.LauncherPhotoView
+        android:id="@+id/launcher_photo_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.k.kwidget.shadow.widget.GuaGuaLeView
+        android:id="@+id/gua_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

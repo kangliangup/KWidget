@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.k.kwidget.shadow.GradientActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="线性渐变"
+            android:id="@+id/btn_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="径向渐变"
+            android:id="@+id/btn_radial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_sweep"
+            android:text="扫描渐变"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="位图渐变"
+            android:id="@+id/btn_bitmap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:text="渐变与Matrix"
+        android:id="@+id/btn_sweep_matrix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="混合渐变"
+        android:id="@+id/btn_compose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="五子棋"
+        android:id="@+id/btn_five"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+
+
+
+<com.k.kwidget.shadow.widget.LinearGradientView
+    android:id="@+id/line_gradient"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+    <com.k.kwidget.shadow.widget.RadialGradientView
+        android:id="@+id/radial_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.k.kwidget.shadow.widget.FiveChessView
+        android:id="@+id/five_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.k.kwidget.shadow.widget.SweepGradientView
+        android:id="@+id/sweep_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.k.kwidget.shadow.widget.BitmapShaderView
+        android:id="@+id/bitmap_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.k.kwidget.shadow.widget.ComposeShaderView
+        android:id="@+id/compose_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.k.kwidget.shadow.widget.SweepMatrixView
+        android:id="@+id/sweep_matrix_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
