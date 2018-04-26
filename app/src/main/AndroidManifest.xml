@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".custom.CustomViewActivity">
+        <activity android:name=".custom.CodeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +30,8 @@
         <activity android:name=".shadow.ShadowActivity" />
         <activity android:name=".shadow.GradientActivity" />
         <activity android:name=".shadow.LayerActivity" />
-        <activity android:name=".shadow.DemoActivity"/>
+        <activity android:name=".shadow.DemoActivity" />
+        <activity android:name=".custom.CustomViewActivity"/>
     </application>
 
 </manifest>

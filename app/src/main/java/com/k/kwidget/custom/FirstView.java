@@ -21,12 +21,12 @@ public class FirstView extends View {
         super(context);
     }
 
-    //在xml布局中使用
+    //在xml布局中使用,自定义属性
     public FirstView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    //需要自定义属性和style时使用
+    //需要和style时使用
     public FirstView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }

@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+  <!--  CustomTextView自定义属性-->
+<declare-styleable name="CustomTextView">
 
+    <attr name="text" format="string"/>
+
+</declare-styleable>
+
+
+<declare-styleable name="CircleImageView">
+    <attr name="circle_border_width" format="dimension"/>
+    <attr name="circle_border_color" format="color"/>
+</declare-styleable>
+    
+    
+<declare-styleable name="CodeView">
+    <!--验证码个数-->
+    <attr name="num_count" format="integer"/>
+    <!--干挠线条数-->
+    <attr name="line_count" format="integer"/>
+   <!-- 验证码字体大小-->
+    <attr name="font_size" format="dimension"/>
+    <!--验证码字体颜色-->
+    <attr name="code_color" format="color"/>
+</declare-styleable>    
+    
+    
+    
 </resources>

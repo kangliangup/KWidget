@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:kl="http://schemas.android.com/apk/res-auto"
+    tools:context="com.k.kwidget.custom.CodeActivity">
+
+    <com.k.kwidget.custom.widget.CodeView
+        android:id="@+id/code_view"
+        android:layout_gravity="center_horizontal"
+        kl:line_count="60"
+        kl:num_count="5"
+        android:padding="10dp"
+        kl:font_size="16sp"
+        kl:code_color="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:text="刷新"
+            android:id="@+id/btn_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="改变颜色"
+            android:id="@+id/btn_change_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="改变字体"
+            android:id="@+id/btn_change_text_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="随机数个数"
+            android:id="@+id/btn_change_num_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+    <Button
+        android:text="干扰线个数"
+        android:id="@+id/btn_change_line_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

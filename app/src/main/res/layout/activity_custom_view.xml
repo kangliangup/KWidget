@@ -3,12 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:k="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context="com.k.kwidget.custom.CustomViewActivity">
 
     <com.k.kwidget.custom.widget.CustomTextView
+        k:text="自定义组件开发详解"
+        android:visibility="gone"
         android:background="@android:color/holo_blue_light"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <com.k.kwidget.custom.widget.CircleImageView
+        k:circle_border_width="10dp"
+        k:circle_border_color="@color/colorPrimary"
+        android:src="@mipmap/dog"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
 </LinearLayout>

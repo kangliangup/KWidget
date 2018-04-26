@@ -1,6 +1,7 @@
 package com.k.kwidget.custom.widget;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -9,11 +10,13 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.k.kwidget.R;
 
 
 public class CustomTextView extends View {
 
-    public static final String TEXT="好好学习，天天向上";
+//    public static final String TEXT="好好学习，天天向上";
+    private  String TEXT="好好学习，天天向上";
 
     private Paint paint;
 
@@ -23,6 +26,11 @@ public class CustomTextView extends View {
         paint=new Paint(Paint.ANTI_ALIAS_FLAG);
         paint.setTextSize(100);
         paint.setColor(Color.RED);
+
+        //读取属性
+        TypedArray a=context.obtainStyledAttributes(attrs, R.styleable.CustomTextView);
+        TEXT=a.getString(R.styleable.CustomTextView_text);
+        a.recycle();
 
     }
 
