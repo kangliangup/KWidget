@@ -26,6 +26,23 @@
     <attr name="code_color" format="color"/>
 </declare-styleable>    
     
+    <declare-styleable name="CornerLayout3">
+        <attr name="layout_position" format="enum">
+            <enum name="left_top" value="0"/>
+            <enum name="right_top" value="1"/>
+            <enum name="left_bottom" value="2"/>
+            <enum name="right_bottom" value="3"/>
+        </attr>
+    </declare-styleable>
     
+    <!--侧边栏属性-->
+    <declare-styleable name="SliderMenu">
+        <!--侧边栏宽度-->
+        <attr name="sliding_width" format="dimension"/>
+        <!--分割线宽度-->
+        <attr name="divider_width" format="dimension"/>
+        <!--手指感应宽度-->
+        <attr name="touch_width" format="dimension"/>
+    </declare-styleable>
     
 </resources>

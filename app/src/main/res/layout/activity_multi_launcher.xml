@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.k.kwidget.scroller.MultiLauncherActivity">
+
+    <com.k.kwidget.scroller.widget.MultiLauncherView
+        android:layout_weight="1"
+        android:id="@+id/ml"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+   <FrameLayout
+      android:background="#FFFF00"
+       android:layout_width="wrap_content"
+         android:layout_height="wrap_content"/>
+        <FrameLayout
+            android:background="#00FF00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <FrameLayout
+            android:background="#FF0000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <FrameLayout
+            android:background="#0000FF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </com.k.kwidget.scroller.widget.MultiLauncherView>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_pre"
+            android:text="上一页"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_next"
+            android:text="下一页"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

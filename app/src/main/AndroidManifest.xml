@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".custom.CodeActivity">
+        <activity android:name=".custom.SligingMenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,7 +31,13 @@
         <activity android:name=".shadow.GradientActivity" />
         <activity android:name=".shadow.LayerActivity" />
         <activity android:name=".shadow.DemoActivity" />
-        <activity android:name=".custom.CustomViewActivity"/>
+        <activity android:name=".custom.CustomViewActivity" />
+        <activity android:name=".custom.CodeActivity" />
+        <activity android:name=".group.GroupActivity" />
+        <activity android:name=".scroller.ScrollToByActivity" />
+        <activity android:name=".scroller.BaseScrllerActivity" />
+        <activity android:name=".scroller.MultiLauncherActivity" />
+        <activity android:name=".custom.FlingRemovedListActivity"></activity>
     </application>
 
 </manifest>

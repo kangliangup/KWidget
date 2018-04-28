@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.k.kwidget.custom.SligingMenuActivity">
+
+    <com.k.kwidget.custom.widget.SliderMenu
+        app:divider_width="5dp"
+        app:sliding_width="200dp"
+        android:id="@+id/sliding_menu"
+        app:touch_width="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <FrameLayout
+        android:background="@android:color/holo_red_dark"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:text="测试"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+
+     <FrameLayout
+         android:background="@android:color/holo_green_light"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
+
+         <Button
+             android:id="@+id/toggle"
+             android:text="显示"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" />
+
+
+     </FrameLayout>
+
+    </com.k.kwidget.custom.widget.SliderMenu>
+
+
+</FrameLayout>
