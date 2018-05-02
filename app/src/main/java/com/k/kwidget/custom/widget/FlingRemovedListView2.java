@@ -13,7 +13,7 @@ import android.widget.ListView;
 import android.widget.Scroller;
 
 
-public class FlingRemovedListView extends ListView {
+public class FlingRemovedListView2 extends ListView {
 
     private static final String TAG = "FlingRemovedListActivity";
     private VelocityTracker velocityTracker;//速度跟踪器
@@ -26,8 +26,9 @@ public class FlingRemovedListView extends ListView {
     private boolean isSlide;
     private Scroller scroller;
     private boolean isBack;
+    private boolean isShowDelete;
 
-    public FlingRemovedListView(Context context, AttributeSet attrs) {
+    public FlingRemovedListView2(Context context, AttributeSet attrs) {
         super(context, attrs);
         touchSlop= ViewConfiguration.get(getContext()).getScaledTouchSlop();
         scroller=new Scroller(context);
@@ -66,14 +67,16 @@ public class FlingRemovedListView extends ListView {
                     Log.i(TAG, "getFirstVisiblePosition: "+getFirstVisiblePosition());
                     Log.i(TAG, "position: "+position);
                     Log.i(TAG, "visibleIndex: "+visibleIndex);
+                    doDelete((ExtendLayout) willFlingView);
                 }
+                restoreItmes();
                 break;
 
             case MotionEvent.ACTION_MOVE:
                 float xVelocity=velocityTracker.getXVelocity();
 //                Log.i(TAG, "xVelocity: "+xVelocity);
                 //判断滑动方向.向右滑动
-                if(/*Math.abs(xVelocity)>SNAP_VELOCITY||*/x>firstX&&
+                if(/*Math.abs(xVelocity)>SNAP_VELOCITY||*/
                         Math.abs(x-preX)>touchSlop&& Math.abs(y-preY)<touchSlop){
                     isSlide=true;
                 }
@@ -94,7 +97,7 @@ public class FlingRemovedListView extends ListView {
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
 
-        if(isSlide&&position!=INVALID_POSITION){
+        if(isSlide&&position!=INVALID_POSITION&&willFlingView!=null){
             float x=ev.getX();
 
         switch (ev.getAction()){
@@ -108,24 +111,22 @@ public class FlingRemovedListView extends ListView {
 
             case MotionEvent.ACTION_UP:
                 int scrollX=willFlingView.getScrollX();
-                int listWidth=getMeasuredWidth();
+                int deleteWidth=((ExtendLayout)willFlingView).getDeleteButton().getWidth();
 
                 Log.i(TAG, "scrollX: "+scrollX);
-                if(Math.abs(scrollX)>=listWidth/2){
-                    //继续滑动
-                    int remain=scrollX+listWidth;
-                    scroller.startScroll(scrollX,0,-remain,0);
-                    isBack=false;
-                }else{
-                    //回退
-                    scroller.startScroll(scrollX,0,-scrollX,0);
-                    isBack=true;
+
+                if(x>firstX){
+                    //向右滑动
+                    if(Math.abs(x-firstX)>=deleteWidth*0.8){
+                        forwardToRight();
+                    }
+
                 }
-
+                else if(x<firstX){
+                    //向左滑动
+                    rollBackToLeft();
+                }
                 postInvalidate();
-
-//                willFlingView=null;
-//                position=INVALID_POSITION;
                 releaseVelocity();
                 isSlide=false;
                 break;
@@ -140,15 +141,6 @@ public class FlingRemovedListView extends ListView {
        if(scroller.computeScrollOffset()){
            willFlingView.scrollTo(scroller.getCurrX(),0);
            postInvalidate();
-           if(scroller.isFinished()){
-               /*没有回退 则删除列表项*/
-           if(!isBack){
-                   onRemoveItemListener.itemRemove(position,getAdapter());
-                   willFlingView.scrollTo(0,0);
-               }
-
-
-           }
        }
     }
 
@@ -190,5 +182,60 @@ public class FlingRemovedListView extends ListView {
         void itemRemove(int position, ListAdapter adapter);
     }
 
+    /**
+     * 恢复前面打开的列表项
+     */
+    private void restoreItmes(){
+        for (int i = 0; i < getChildCount(); i++) {
+            View child=getChildAt(i);
+            if(child instanceof ExtendLayout){
+                ExtendLayout extendLayout= (ExtendLayout) child;
+                //判断当前滑动列表项与上一次滑动的是否为同一个
+                //如果不是，则隐藏上一个
+                if(willFlingView!=extendLayout){
+                    extendLayout.scrollTo(extendLayout.getDeleteButton().getWidth(),0);
+                }
+            }
+        }
+    }
 
+
+    /**
+     * 执行删除
+     */
+    private void doDelete(ExtendLayout layout){
+        View deleteButton=layout.getDeleteButton();
+        if(deleteButton!=null){
+            deleteButton.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onRemoveItemListener.itemRemove(position,getAdapter());
+                    willFlingView=null;
+                    restoreItmes();
+                }
+            });
+        }
+
+    }
+
+    /**
+     * 继续向右滑动
+     */
+    private void forwardToRight(){
+        int scrollX=willFlingView.getScrollX();
+        //继续滑动
+        scroller.startScroll(scrollX,0,-scrollX,0);
+        isShowDelete=true;
+    }
+
+    /**
+     * 向左回退
+     */
+    private void rollBackToLeft(){
+        int scrollX=willFlingView.getScrollX();
+        int deleteWidth=((ExtendLayout)willFlingView).getDeleteButton().getWidth();
+        int remain=deleteWidth-scrollX;
+        scroller.startScroll(scrollX,0,remain,0);
+        isShowDelete=false;
+    }
 }

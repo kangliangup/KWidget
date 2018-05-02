@@ -38,7 +38,6 @@ public class SliderMenu extends ViewGroup {
 
 
 
-
     public SliderMenu(Context context, AttributeSet attrs) {
         super(context, attrs);
 
